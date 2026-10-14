@@ -43,25 +43,30 @@ document.querySelectorAll("[data-flip]").forEach((button) => {
 });
 
 const lessons = {
-  html: { title: "Вебийн үндэс", query: "HTML semantic form basics short tutorial", description: "HTML-ийн үндсэн бүтэц, semantic tag болон form-ийн богино хичээл." },
-  css: { title: "CSS дизайн", query: "CSS selectors colors typography short tutorial", description: "CSS selector, өнгө, typography ашиглах богино хичээл." },
-  layout: { title: "Flexbox ба Grid", query: "CSS flexbox grid responsive layout short tutorial", description: "Flexbox, CSS Grid ашиглан responsive layout хийх жишээ." },
-  javascript: { title: "JavaScript эхлэл", query: "JavaScript DOM events beginner short tutorial", description: "JavaScript DOM болон event-ийн анхан шатны жишээ." },
-  ui: { title: "Интерфейс зохиомж", query: "UI UX wireframe design basics short tutorial", description: "Wireframe болон UI/UX зохиомжийн богино тайлбар." },
-  project: { title: "Мини төсөл", query: "HTML CSS JavaScript portfolio beginner project tutorial", description: "HTML, CSS, JavaScript-ээр мини portfolio хийх жишээ." }
+  html: { title: "Вебийн үндэс", videoId: "ok-plXXHlWw", description: "HTML-ийн үндсэн бүтэц, semantic tag болон form-ийн богино хичээл." },
+  css: { title: "CSS дизайн", videoId: "OEV8gMkCHXQ", description: "CSS-ийн үндсэн ойлголт, selector болон style дүрмийн товч танилцуулга." },
+  layout: { title: "Flexbox ба Grid", videoId: "K74l26pE4YA", description: "Flexbox ашиглан уян хатан байрлал, responsive layout бүтээх богино жишээ." },
+  javascript: { title: "JavaScript эхлэл", videoId: "DHjqpvDnNGE", description: "JavaScript-ийн хувьсагч, функц, event зэрэг суурь ойлголтуудын товч тайлбар." },
+  ui: { title: "Интерфейс зохиомж", videoId: "rKfZ-OKgX_M", description: "Figma ашиглан интерфейсийн wireframe болон UI зохиомж эхлүүлэх богино жишээ." },
+  project: { title: "Мини төсөл", videoId: "uuOXPWCh-6o", description: "Сурсан HTML, CSS-ээ нэгтгэн responsive веб хуудас бүтээх богино танилцуулга." }
 };
 
+const lessonTitle = document.querySelector("#video-title");
 const lessonDescription = document.querySelector("#lesson-description");
 const lessonLink = document.querySelector("#youtube-lesson-link");
+const lessonEmbed = document.querySelector("#lesson-embed");
 const lessonOptions = document.querySelectorAll("[data-lesson-option]");
 
 function selectLesson(id) {
   const lesson = lessons[id];
   if (!lesson) return;
 
+  lessonTitle.textContent = lesson.title;
   lessonDescription.textContent = lesson.description;
-  lessonLink.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(lesson.query)}`;
-  lessonLink.setAttribute("aria-label", `${lesson.title}: YouTube дээр богино хичээл үзэх`);
+  lessonLink.href = `https://www.youtube.com/watch?v=${lesson.videoId}`;
+  lessonLink.setAttribute("aria-label", `${lesson.title}: YouTube дээр нээх`);
+  lessonEmbed.title = `${lesson.title} хичээлийн видео`;
+  lessonEmbed.src = `https://www.youtube-nocookie.com/embed/${lesson.videoId}?autoplay=1&rel=0`;
   lessonOptions.forEach((option) => {
     const selected = option.dataset.lessonOption === id;
     option.classList.toggle("is-selected", selected);

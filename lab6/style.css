@@ -178,6 +178,8 @@ a { color: inherit; }
 .multimedia-band { padding: 32px 20px; color: #f5f9ff; background: #173b65; }
 .multimedia-inner,.map-inner { width: min(1200px,100%); margin: 0 auto; }
 .multimedia-inner { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); align-items: center; gap: 30px; }
+.lesson-player { min-width: 0; grid-column: 1 / -1; overflow: hidden; background: #0a1728; }
+.lesson-player iframe { width: 100%; aspect-ratio: 16 / 9; display: block; border: 0; }
 .video-copy .eyebrow { color: #b8d4f5; }
 .video-copy h2 { margin: 10px 0 0; color: white; font-family: Georgia,serif; font-size: 32px; font-weight: 500; line-height: 1.08; }
 .video-copy h2 span { color: #a6c8f4; font-style: italic; }

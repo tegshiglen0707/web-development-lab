@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #183352; background: #f1f6fc; font-family: Arial,sans-serif; }
+header,body>footer { width: min(1080px,100%); margin: auto; padding: 18px 24px; display: flex; justify-content: space-between; gap: 12px; }
+header strong { color: #1769d2; font-size: 13px; }header span,body>footer { color: #687992; font-size: 12px; }
+main { width: min(1080px,100%); margin: 0 auto; padding: 8px 24px 24px; display: grid; grid-template-columns: minmax(0,390px) minmax(0,1fr); align-items: start; gap: 24px; }
+.device { min-width: 0; }.device-label { margin-bottom: 8px; color: #587166; font-size: 11px; font-weight: 700; }
+.mock-page { padding: 12px; border: 1px solid #b8c7be; background: #fffefa; box-shadow: 0 10px 26px #243c3510; }
+.mobile .mock-page { max-width: 360px; margin: auto; }.mock-nav { min-height: 34px; padding: 8px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #aabbb0; font-size: 10px; }
+.mock-hero { position: relative; min-height: 144px; margin-top: 10px; padding: 15px; border: 1px solid #94b8e6; background: #e7f1ff; }.desktop .mock-hero { min-height: 174px; }
+.mock-hero i,.mock-card b { color: #587166; font-size: 8px; font-style: normal; }.mock-hero h1 { max-width: 78%; margin: 11px 0 5px; font: 20px/1.12 Georgia,serif; }.mock-hero p,.mock-card p { margin: 6px 0 0; color: #718079; font-size: 8px; }.block { position: absolute; right: 12px; bottom: 12px; width: 46px; height: 42px; border: 1px solid #b2c0b7; background: #fffefa; }
+.mock-section { margin-top: 13px; }.mock-section h2 { margin: 0 0 8px; font: 16px Georgia,serif; }.mock-card { min-width: 0; min-height: 72px; margin-top: 7px; padding: 9px; border: 1px solid #c5d0c9; background: #fffefa; }.mock-card strong { display: block; margin-top: 7px; font: 11px Georgia,serif; }.mock-footer { margin-top: 12px; padding: 10px 4px 2px; border-top: 1px solid #b8c7be; color: #687972; font-size: 8px; }
+.desktop-layout { display: grid; grid-template-columns: minmax(0,1fr) 155px; gap: 10px; }.desktop .mock-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }.desktop .mock-grid .mock-card { min-height: 100px; }.desktop-layout aside { padding-top: 10px; }.desktop-layout aside .mock-card { min-height: 112px; }.desktop-layout aside .mentor { min-height: 88px; background: #e7f1ff; }
+@media (max-width: 700px) { main { grid-template-columns: 1fr; }.desktop { overflow: hidden; }.desktop .mock-page { width: 690px; transform-origin: top left; } }

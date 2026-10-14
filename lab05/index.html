@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code Campus-ийн сургалт, эвент болон менторын мэдээлэл.">
+  <title>Code Campus | Responsive веб зохиомж</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Үндсэн цэс">
+      <a class="logo" href="#home">Code <span>Campus</span></a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Цэс нээх">
+      <label class="menu-button" for="menu-toggle" aria-hidden="true"><span></span><span></span><span></span></label>
+      <ul class="nav-menu">
+        <li><a href="#courses">Хөтөлбөр</a></li>
+        <li><a href="#events">Эвент</a></li>
+        <li><a href="#mentors">Ментор</a></li>
+        <li><a class="nav-cta" href="#contact">Холбоо барих <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home" class="page-layout">
+    <div class="main-content">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> ОЮУТНУУДЫН ТЕХНОЛОГИЙН КЛУБ</p>
+          <h1>Санаагаа <span>веб</span> болгон бүтээ.</h1>
+          <p class="hero-description">HTML, CSS, JavaScript-ийг бодит жижиг төслүүд дээр туршиж, өөрийн бүтээлийн санг эхлүүлээрэй.</p>
+          <a class="primary-link" href="#courses">Хөтөлбөр үзэх <span aria-hidden="true">→</span></a>
+          <div class="hero-note"><span class="note-mark" aria-hidden="true">CC</span><span>Хамтдаа суръя, хамтдаа бүтээе.</span></div>
+        </div>
+        <aside class="enrollment" aria-label="Шинэ элсэлтийн мэдээлэл">
+          <div class="enrollment-top"><span class="enrollment-label">ДАРААГИЙН ЭЛСЭЛТ</span><span class="open-badge">Нээлттэй</span></div>
+          <p class="enrollment-date">10<span> сарын</span> 15</p>
+          <p class="enrollment-copy">Frontend эхлэгч ангийн бүртгэл эхэллээ.</p>
+          <a href="#contact">Бүртгүүлэх <span aria-hidden="true">↗</span></a>
+        </aside>
+        <div class="hero-index" aria-hidden="true">01 <span>—</span> 03</div>
+      </section>
+
+      <section class="courses" id="courses">
+        <div class="section-heading">
+          <div><p class="eyebrow">СУРАЛЦАХ ЗАМ</p><h2>Онцлох хөтөлбөр</h2></div>
+          <a class="text-link" href="#contact">Бүх хөтөлбөр <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="course-grid">
+          <article class="course-card"><div class="card-top"><span class="course-code">01 / HTML</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-html" aria-hidden="true">&lt;/&gt;</div><h3>Вебийн үндэс</h3><p>Semantic HTML бүтэц, form, хүснэгт болон вебийн суурь зохиомж.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+          <article class="course-card"><div class="card-top"><span class="course-code">02 / CSS</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-css" aria-hidden="true">✳</div><h3>CSS дизайн</h3><p>Өнгө, typography, spacing ашиглан цэгцтэй интерфейс бүтээнэ.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+          <article class="course-card"><div class="card-top"><span class="course-code">03 / LAYOUT</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-layout" aria-hidden="true">▦</div><h3>Flexbox ба Grid</h3><p>Responsive навигаци, картын grid, дэлгэцэд таарах layout хийнэ.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+          <article class="course-card"><div class="card-top"><span class="course-code">04 / JS</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-js" aria-hidden="true">JS</div><h3>JavaScript эхлэл</h3><p>DOM, event болон формын шалгалтаар хуудсаа интерактив болгоно.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+          <article class="course-card"><div class="card-top"><span class="course-code">05 / UI</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-ui" aria-hidden="true">◫</div><h3>Интерфейс зохиомж</h3><p>Уншихад хялбар, ойлгомжтой хэрэглэгчийн туршлага төлөвлөнө.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+          <article class="course-card"><div class="card-top"><span class="course-code">06 / BUILD</span><span class="card-arrow" aria-hidden="true">↗</span></div><div class="card-icon icon-build" aria-hidden="true">✦</div><h3>Мини төсөл</h3><p>Сурсан зүйлсээ нэгтгэн portfolio-д оруулах сайт бүтээнэ.</p><a href="#contact">Дэлгэрэнгүй <span aria-hidden="true">→</span></a></article>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <section class="sidebar-section" id="events">
+        <div class="sidebar-heading"><p class="eyebrow">ХУАНЛИ</p><span class="sidebar-symbol" aria-hidden="true">↗</span></div>
+        <h2>Ойрын эвент</h2>
+        <article class="event-item"><time datetime="2026-10-16"><span>БААС</span><strong>16</strong></time><div><h3>CSS Grid Workshop</h3><p>18:00 · 204-р лаборатори</p></div></article>
+        <article class="event-item"><time datetime="2026-10-19"><span>ДАВАА</span><strong>19</strong></time><div><h3>Portfolio Review</h3><p>16:00 · Онлайн уулзалт</p></div></article>
+        <a class="text-link" href="#contact">Бүх эвент <span aria-hidden="true">→</span></a>
+      </section>
+      <section class="mentor-section" id="mentors">
+        <p class="eyebrow">ХАМТЫН НӨХӨРЛӨЛ</p><h2>Ахлах оюутнуудаас суралц.</h2>
+        <p>Frontend хөгжүүлэлтээр дадлагажсан менторууд долоо хоног бүр зөвлөгөө өгнө.</p>
+        <a href="#contact">Ментортой уулзах <span aria-hidden="true">↗</span></a>
+        <div class="mentor-stamp" aria-hidden="true">CODE<br>CAMPUS<br><span>EST. 2024</span></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer" id="contact"><a class="footer-brand" href="#home">Code <span>Campus</span></a><p>© 2026 Веб хөгжүүлэлтийн клуб</p><a href="mailto:hello@codecampus.mn">hello@codecampus.mn <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

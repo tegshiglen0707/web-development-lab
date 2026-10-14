@@ -138,11 +138,11 @@ a { color: inherit; }
 .photo-card.is-flipped .card-inner { transform: rotateY(180deg); }
 .card-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .card-front { color: white; background: #315678; }
-.course-visual { position: absolute; top: 22px; left: 18px; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / 34%); color: #fff; background: rgb(255 255 255 / 13%); font-size: 17px; font-weight: 800; }
+.course-visual { position: absolute; z-index: 1; top: 22px; left: 18px; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / 34%); color: #fff; background: rgb(255 255 255 / 13%); font-size: 17px; font-weight: 800; }
 .photo-card:hover .course-visual,.photo-card:focus-within .course-visual { transform: translateY(-3px) rotate(-4deg); }
 .course-visual { transition: transform .25s ease; }
 .photo-shade { position: absolute; inset: 0; background: linear-gradient(145deg,#1d5a91,#102747); pointer-events: none; }
-.photo-meta { position: absolute; right: 52px; bottom: 16px; left: 16px; }
+.photo-meta { position: absolute; z-index: 1; right: 52px; bottom: 16px; left: 16px; }
 .photo-meta .course-code { color: #dceaff; font-size: 8px; }
 .photo-meta h3 { margin: 5px 0 2px; color: white; font-family: Georgia,serif; font-size: 18px; font-weight: 500; }
 .photo-meta p { margin: 0; color: #e4edf7; font-size: 9px; }

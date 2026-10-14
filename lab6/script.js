@@ -41,30 +41,3 @@ document.querySelectorAll("[data-flip]").forEach((button) => {
     if (flipped) card.querySelector(".back-button").focus();
   });
 });
-
-const filters = document.querySelectorAll("[data-filter]");
-const cards = document.querySelectorAll(".photo-card");
-filters.forEach((filter) => {
-  filter.addEventListener("click", () => {
-    filters.forEach((item) => {
-      const active = item === filter;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    const category = filter.dataset.filter;
-    cards.forEach((card) => {
-      const visible = category === "all" || card.dataset.category === category;
-      card.classList.toggle("is-hidden", !visible);
-      if (!visible && card.classList.contains("is-flipped")) {
-        card.classList.remove("is-flipped");
-        card.querySelector(".card-front").removeAttribute("inert");
-        card.querySelector(".card-front").setAttribute("aria-hidden", "false");
-        card.querySelector(".card-back").setAttribute("inert", "");
-        card.querySelector(".card-back").setAttribute("aria-hidden", "true");
-        card.querySelectorAll("[data-flip]").forEach((control) => {
-          control.setAttribute("aria-pressed", "false");
-        });
-      }
-    });
-  });
-});

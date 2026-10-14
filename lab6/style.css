@@ -132,20 +132,16 @@ a { color: inherit; }
 /* Lab 06 gallery and multimedia */
 .gallery-section { min-width: 0; }
 .section-heading h2 { font-size: 26px; }
-.gallery-filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
-.filter-button { min-height: 34px; padding: 0 11px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid transparent; color: var(--muted); background: transparent; font-size: 10px; }
-.filter-button:hover,.filter-button.is-active { border-color: var(--line); color: var(--green); background: var(--white); }
-.filter-button span { color: var(--orange); font-size: 8px; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-auto-rows: 180px; gap: 13px; perspective: 1200px; }
 .photo-card { min-width: 0; min-height: 0; grid-column: span 1; grid-row: span 1; animation: card-enter .6s both cubic-bezier(.2,.7,.25,1); animation-delay: calc(var(--i,0) * 90ms); }
-.photo-card-featured { grid-column: span 2; grid-row: span 2; }
 .card-inner { position: relative; width: 100%; height: 100%; min-height: 180px; transform-style: preserve-3d; transition: transform .68s cubic-bezier(.2,.72,.2,1); }
 .photo-card.is-flipped .card-inner { transform: rotateY(180deg); }
 .card-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .card-front { color: white; background: #315678; }
-.card-front img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease,filter .3s ease; }
-.photo-card:hover .card-front img,.photo-card:focus-within .card-front img { transform: scale(1.04); }
-.photo-shade { position: absolute; inset: 28% 0 0; background: linear-gradient(transparent,rgb(7 20 34 / 78%)); pointer-events: none; }
+.course-visual { position: absolute; top: 22px; left: 18px; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / 34%); color: #fff; background: rgb(255 255 255 / 13%); font-size: 17px; font-weight: 800; }
+.photo-card:hover .course-visual,.photo-card:focus-within .course-visual { transform: translateY(-3px) rotate(-4deg); }
+.course-visual { transition: transform .25s ease; }
+.photo-shade { position: absolute; inset: 0; background: linear-gradient(145deg,#1d5a91,#102747); pointer-events: none; }
 .photo-meta { position: absolute; right: 52px; bottom: 16px; left: 16px; }
 .photo-meta .course-code { color: #dceaff; font-size: 8px; }
 .photo-meta h3 { margin: 5px 0 2px; color: white; font-family: Georgia,serif; font-size: 18px; font-weight: 500; }
@@ -154,15 +150,13 @@ a { color: inherit; }
 .flip-button:hover,.flip-button:focus-visible { background: #1769d2; transform: scale(1.08); }
 .flip-button svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
 .card-back { padding: 17px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; transform: rotateY(180deg); color: #f7faff; background: #174c91; }
-.photo-card:nth-child(2) .card-back,.photo-card:nth-child(5) .card-back { background: #215e68; }
-.photo-card:nth-child(3) .card-back,.photo-card:nth-child(6) .card-back { background: #914f37; }
+.photo-card:nth-child(even) .card-back { background: #215e68; }
 .back-index { color: #d5e7fc; font-size: 8px; font-weight: 700; }
 .card-back h3 { margin: 8px 0; color: white; font-family: Georgia,serif; font-size: 18px; font-weight: 500; }
 .card-back p { max-width: 42ch; margin: 0; color: #e2edf9; font-size: 10px; line-height: 1.6; }
 .card-back>a { margin-top: 12px; color: white; font-size: 9px; font-weight: 700; text-decoration-color: #a6c8f4; text-underline-offset: 3px; }
 .back-button { margin-top: 12px; padding: 7px 10px; border: 1px solid rgb(255 255 255 / 50%); border-radius: 2px; color: white; background: transparent; font-size: 9px; }
 .back-button:hover,.back-button:focus-visible { background: rgb(255 255 255 / 14%); }
-.photo-card.is-hidden { display: none; }
 .gallery-caption { margin: 12px 0 0; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 9px; }
 .caption-rule { width: 22px; height: 1px; flex: 0 0 22px; background: var(--orange); }
 .theme-toggle { width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: var(--white); transition: color .18s ease,border-color .18s ease,transform .18s ease; }
@@ -195,6 +189,7 @@ a { color: inherit; }
 .map-section { padding: 42px 20px 52px; background: var(--paper); }
 .map-section .section-heading { margin-bottom: 14px; }
 .map-section .section-heading h2 { font-size: 24px; }
+.map-description { margin: 8px 0 0; color: var(--muted); font-size: 11px; }
 .map-frame { height: clamp(220px,30vw,340px); overflow: hidden; border: 1px solid var(--line); background: #e8f0f8; }
 .map-frame iframe { width: 100%; height: 100%; border: 0; }
 :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
@@ -202,12 +197,10 @@ a { color: inherit; }
 
 @media (max-width: 920px) {
   .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 190px; }
-  .photo-card-featured { grid-column: span 2; grid-row: span 2; }
   .multimedia-inner { gap: 20px; }
 }
 @media (max-width: 680px) {
   .gallery-section .section-heading { align-items: flex-start; flex-direction: column; }
-  .gallery-filters { justify-content: flex-start; }
   .gallery-grid { grid-auto-rows: 220px; }
   .multimedia-inner { grid-template-columns: 1fr; }
 }
@@ -218,7 +211,6 @@ a { color: inherit; }
   .hero h1 { font-size: 34px; }
   .hero-description { font-size: 13px; }
   .gallery-grid { grid-template-columns: minmax(0,1fr); grid-auto-rows: 250px; }
-  .photo-card-featured { grid-column: span 1; grid-row: span 1; }
   .photo-meta { right: 48px; bottom: 15px; left: 15px; }
   .card-back { padding: 15px; }
   .card-back p { font-size: 11px; }
@@ -228,5 +220,5 @@ a { color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-  .photo-card:hover .card-front img,.photo-card:focus-within .card-front img,.theme-toggle:hover,.flip-button:hover { transform: none; }
+  .photo-card:hover .course-visual,.photo-card:focus-within .course-visual,.theme-toggle:hover,.flip-button:hover { transform: none; }
 }

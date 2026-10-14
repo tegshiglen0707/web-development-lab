@@ -41,3 +41,38 @@ document.querySelectorAll("[data-flip]").forEach((button) => {
     if (flipped) card.querySelector(".back-button").focus();
   });
 });
+
+const lessons = {
+  html: { title: "Вебийн үндэс", query: "HTML semantic form basics short tutorial", description: "HTML-ийн үндсэн бүтэц, semantic tag болон form-ийн богино хичээл." },
+  css: { title: "CSS дизайн", query: "CSS selectors colors typography short tutorial", description: "CSS selector, өнгө, typography ашиглах богино хичээл." },
+  layout: { title: "Flexbox ба Grid", query: "CSS flexbox grid responsive layout short tutorial", description: "Flexbox, CSS Grid ашиглан responsive layout хийх жишээ." },
+  javascript: { title: "JavaScript эхлэл", query: "JavaScript DOM events beginner short tutorial", description: "JavaScript DOM болон event-ийн анхан шатны жишээ." },
+  ui: { title: "Интерфейс зохиомж", query: "UI UX wireframe design basics short tutorial", description: "Wireframe болон UI/UX зохиомжийн богино тайлбар." },
+  project: { title: "Мини төсөл", query: "HTML CSS JavaScript portfolio beginner project tutorial", description: "HTML, CSS, JavaScript-ээр мини portfolio хийх жишээ." }
+};
+
+const lessonDescription = document.querySelector("#lesson-description");
+const lessonLink = document.querySelector("#youtube-lesson-link");
+const lessonOptions = document.querySelectorAll("[data-lesson-option]");
+
+function selectLesson(id) {
+  const lesson = lessons[id];
+  if (!lesson) return;
+
+  lessonDescription.textContent = lesson.description;
+  lessonLink.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(lesson.query)}`;
+  lessonLink.setAttribute("aria-label", `${lesson.title}: YouTube дээр богино хичээл үзэх`);
+  lessonOptions.forEach((option) => {
+    const selected = option.dataset.lessonOption === id;
+    option.classList.toggle("is-selected", selected);
+    option.setAttribute("aria-pressed", String(selected));
+  });
+}
+
+document.querySelectorAll("[data-lesson]").forEach((link) => {
+  link.addEventListener("click", () => selectLesson(link.dataset.lesson));
+});
+
+lessonOptions.forEach((option) => {
+  option.addEventListener("click", () => selectLesson(option.dataset.lessonOption));
+});
